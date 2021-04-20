@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvc/models/car_model.dart';
 import 'package:flutter_mvc/server/api_client.dart';
+import 'package:flutter_mvc/views/details.dart';
+import 'package:get/get.dart';
 
 class CarItem extends StatelessWidget {
   final Car tempCar;
@@ -10,10 +12,11 @@ class CarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ListTile(
       onTap: () {
-
-      },
+        Get.to(() => CarDetails(car: tempCar,title: 'Car Catalog Information',));
+        },
       contentPadding: const EdgeInsets.all(8.0),
       title: Row(
         children: [
